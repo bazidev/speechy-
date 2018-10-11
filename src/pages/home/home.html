@@ -1,7 +1,7 @@
 
  
 <ion-content padding>
-  <button ion-button full (click)="getPermission()">Get Permission</button>
+ <!-- <button ion-button full (click)="getPermission()">Get Permission</button>
   <button ion-button full (click)="startListening()">Start Listening</button>
   <button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
  
@@ -15,5 +15,40 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  
+-->
+<ion-slides >
+  <ion-slide *ngFor="let item of items">
+    <page-slid [imagePath]="item.image" [word]="item.word"></page-slid>
+  </ion-slide>
+</ion-slides>
+
+ <button color="secondary" round ion-button icon-start (click)="startListening()">
+      <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
+      tap to speak
+  </button>
+  <button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
+ 
+  <ion-card>
+    <ion-card-header>This is what I understood...</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let match of matches">
+          {{ match }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card> 
+
+<button color="primary" round ion-button icon-start (click)="next()" >
+  <ion-icon ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+  skip
+</button>
+
+<button color="primary" round ion-button icon-start (click)="next()" [disabled]="!isenabled">
+  <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+  next
+</button>
+
+
+
 </ion-content>

@@ -4,25 +4,33 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>slid</ion-title>
-  </ion-navbar>
+  <!-- <img src="img/myImage.jpg" style="width : 100% ; height : 100%" ng-click="startListening()" > -->
+  <!-- <ion-icon ios="ios-mic" md="md-mic" ng-click="startListening()" ></ion-icon> -->
 
-</ion-header>
-<ion-slides>
-  <ion-slide>
-    <h1>Slide 1</h1>
-  </ion-slide>
-  <ion-slide>
-    <h1>Slide 2</h1>
-  </ion-slide>
-  <ion-slide>
-    <h1>Slide 3</h1>
-  </ion-slide>
-</ion-slides>
 
-<ion-content padding>
+  <ion-row justify-content-center	>
+      <ion-img width="100" height="100"  [src]="imagePath"> </ion-img>
+  </ion-row>
+  
 
-</ion-content>
+
+
+  <!-- <button ion-button full (click)="startListening()">Start Listening</button> -->
+  
+  <!-- <button color="secondary" round ion-button icon-start ng-click="startListening()">
+      <ion-icon ios="ios-mic" md="md-mic"></ion-icon>
+      tap to speak
+  </button>
+  <button ion-button full (click)="stopListening()" *ngIf="isIos()">Stop Listening</button>
+ 
+  <ion-card>
+    <ion-card-header>This is what I understood...</ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let match of matches">
+          {{ match }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>  -->

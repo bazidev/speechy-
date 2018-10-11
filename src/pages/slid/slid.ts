@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component,Input ,NgModule} from '@angular/core';
+import { IonicPage, NavParams } from 'ionic-angular';
 import { Slides } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
-
+import { NavController, Platform } from 'ionic-angular';
+import { SpeechRecognition } from '@ionic-native/speech-recognition';
+import { Observable } from 'rxjs/Observable';
+import { ChangeDetectorRef } from '@angular/core';
 /**
  * Generated class for the SlidPage page.
  *
@@ -10,18 +13,23 @@ import { ViewChild } from '@angular/core';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-slid',
   templateUrl: 'slid.html',
 })
+
+
 export class SlidPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @Input() word:string;
+  @Input() imagePath:string;
+  matches: String[];
+  isRecording = false;
+ 
+  constructor(public navCtrl: NavController, private speechRecognition: SpeechRecognition, private plt: Platform, private cd: ChangeDetectorRef) {
+   
   }
+ 
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SlidPage');
-  }
-
+  
 }

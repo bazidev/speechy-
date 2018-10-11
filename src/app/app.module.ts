@@ -29,6 +29,7 @@ import { SlidPage } from '../pages/slid/slid';
     StatusBar,
     SplashScreen,
     SpeechRecognition,
+    SlidPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
